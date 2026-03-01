@@ -110,6 +110,19 @@ Consultar por WhatsApp
 </button>
 
 </div>
+<script>
+function mostrarBordados() {
+    var galeria = document.getElementById("galeria");
+    if (galeria.style.display === "none") {
+        galeria.style.display = "block";
+    } else {
+        galeria.style.display = "none";
+    }
+}
 
+function seleccionarBordado(nombre) {
+    alert("Seleccionaste: " + nombre);
+}
+</script>
 </body>
 </html>
