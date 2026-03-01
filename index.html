@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tienda</title>
+
+<style>
+body{
+    font-family: Arial;
+    padding:20px;
+}
+
+.producto{
+    border:1px solid #ddd;
+    padding:15px;
+    margin-bottom:15px;
+}
+
+button{
+    padding:10px;
+    margin-top:10px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Tienda</h1>
+
+<div class="producto">
+<h3>Producto de ejemplo</h3>
+
+<label>Talle</label>
+<select id="talle">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<br><br>
+
+<label>Color</label>
+<select id="color">
+<option>Negro</option>
+<option>Blanco</option>
+<option>Azul</option>
+</select>
+
+<br><br>
+
+<label>Cantidad</label>
+<input type="number" id="cantidad" value="1" min="1">
+
+<br><br>
+
+<label>Logo (subir imagen)</label>
+<input type="file" id="logo">
+
+<br>
+
+<button onclick="comprar()">Consultar por WhatsApp</button>
+
+</div>
+
+<script>
+
+function comprar(){
+
+let talle = document.getElementById("talle").value;
+let color = document.getElementById("color").value;
+let cantidad = document.getElementById("cantidad").value;
+
+let mensaje = "Hola, quiero consultar por: %0A" +
+"Producto de trabajo %0A" +
+"Talle: " + talle + "%0A" +
+"Color: " + color + "%0A" +
+"Cantidad: " + cantidad + "%0A" +
+"Voy a enviar el logo por este chat";
+
+window.open("https://wa.me/?text="+mensaje);
+
+}
+</script>
+
+</body>
+</html>
