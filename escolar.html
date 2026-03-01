@@ -88,6 +88,19 @@ function enviarWhatsApp(producto){
 
 <label>Cantidad:</label><br>
 <input type="number" id="cantidad" value="1" min="1"><br><br>
+<button onclick="mostrarBordados()">Ver bordados disponibles</button>
+
+<div id="galeria" style="display:none; margin-top:20px;">
+    <h3>Elegí tu bordado</h3>
+    
+    <img src="imagenes/simondeiriondo.png" width="100" onclick="seleccionarBordado('Colegio 1')">
+    <img src="imagenes/eetn21 width="100" onclick="seleccionarBordado('Colegio 2')">
+    
+    <br><br>
+    <button onclick="seleccionarBordado('Personalizado (envío imagen por WhatsApp)')">
+        Personalizado
+    </button>
+</div>
 
 <label>Subir Logo (bordado):</label><br>
 <input type="file" id="logo"><br><br>
