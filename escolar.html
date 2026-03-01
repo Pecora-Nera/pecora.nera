@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Chombas</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+    padding:20px;
+}
+
+.producto{
+    border:1px solid #ddd;
+    padding:20px;
+    margin:20px auto;
+    width:300px;
+    border-radius:15px;
+}
+
+img{
+    width:100%;
+    border-radius:10px;
+}
+
+button{
+    background:black;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+
+<script>
+function enviarWhatsApp(producto){
+    let talle = document.getElementById("talle").value;
+    let color = document.getElementById("color").value;
+    let cantidad = document.getElementById("cantidad").value;
+    let logo = document.getElementById("logo").files[0]?.name || "No adjuntado";
+
+    let mensaje = "Hola! Quiero consultar:\n\n" +
+                  "Producto: " + producto + "\n" +
+                  "Talle: " + talle + "\n" +
+                  "Color: " + color + "\n" +
+                  "Cantidad: " + cantidad + "\n" +
+                  "Logo: " + logo;
+
+    window.open("https://wa.me/5493624772154?text=" + encodeURIComponent(mensaje));
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>🎓 Chombas</h1>
+
+<div class="producto">
+<img src="https://via.placeholder.com/300x200?text=Chomba">
+
+<h3>Chomba Bordada</h3>
+
+<label>Talle:</label><br>
+<select id="talle">
+<option>6</option>
+<option>8</option>
+<option>10</option>
+<option>12</option>
+<option>14</option>
+<option>16</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>XXL</option>
+<option>XXXL</option>
+</select><br><br>
+
+<label>Color:</label><br>
+<select id="color">
+<option>Azul</option>
+<option>Gris</option>
+<option>Blanco</option>
+</select><br><br>
+
+<label>Cantidad:</label><br>
+<input type="number" id="cantidad" value="1" min="1"><br><br>
+
+<label>Subir Logo (bordado):</label><br>
+<input type="file" id="logo"><br><br>
+
+<button onclick="enviarWhatsApp('Chomba Bordada')">
+Consultar por WhatsApp
+</button>
+
+</div>
+
+</body>
+</html>
