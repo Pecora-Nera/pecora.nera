@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ropa de Trabajo</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+    padding:20px;
+}
+
+.producto{
+    border:1px solid #ddd;
+    padding:20px;
+    margin:20px auto;
+    width:300px;
+    border-radius:15px;
+}
+
+img{
+    width:100%;
+    border-radius:10px;
+}
+
+button{
+    background:black;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+
+<script>
+function enviarWhatsApp(producto){
+    let talle = document.getElementById("talle").value;
+    let color = document.getElementById("color").value;
+    let cantidad = document.getElementById("cantidad").value;
+
+    let mensaje = "Hola! Quiero consultar:\n\n" +
+                  "Producto: " + producto + "\n" +
+                  "Talle: " + talle + "\n" +
+                  "Color: " + color + "\n" +
+                  "Cantidad: " + cantidad;
+
+    window.open("https://wa.me/TUNUMERO?text=" + encodeURIComponent(mensaje));
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>🧥 Ropa de Trabajo</h1>
+
+<div class="producto">
+<img src="https://via.placeholder.com/300x200?text=Campera+Trabajo">
+<h3>Campera de Trabajo</h3>
+
+<label>Talle:</label><br>
+<select id="talle">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select><br><br>
+
+<label>Color:</label><br>
+<select id="color">
+<option>Negro</option>
+<option>Azul</option>
+<option>Gris</option>
+</select><br><br>
+
+<label>Cantidad:</label><br>
+<input type="number" id="cantidad" value="1" min="1"><br><br>
+
+<button onclick="enviarWhatsApp('Campera de Trabajo')">
+Consultar por WhatsApp
+</button>
+
+</div>
+
+</body>
+</html>
